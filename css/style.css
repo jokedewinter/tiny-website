@@ -87,26 +87,42 @@ img {
 /* Navigation
  * ------------------------------------------------------------- */
 
-nav ul li {
- 	/* 
- 	Using display: inline-block will align all the list elements in one line */
-   	display: inline-block;
-   	margin-right: 20px;
-}
-
 nav ul li a {
-   	font-size: 14px;
-   	font-weight: 700;
    	text-decoration: none;
-   	text-transform: uppercase;
-   	letter-spacing: 1px;
-   	border-bottom: 2px solid #555;
    	color: #555;
 }
 
 nav ul li a:hover {
   border-color: peru; /* peru is a burned orange colour */
   color: peru;
+}
+
+
+.nav__pages ul li {
+ 	/* 
+ 	Using display: inline-block will align all the list elements in one line */
+   	display: inline-block;
+   	margin-right: 20px;
+}
+
+.nav__pages ul li a {
+   	font-weight: 700;
+   	font-size: 14px;
+   	text-transform: uppercase;
+   	letter-spacing: 1px;
+   	border-bottom: 2px solid #555;
+}
+
+
+.nav__anchors {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #ccc;
+}
+
+.nav__anchors ul li a {
+   	font-size: 16px;
+  	border-bottom: 1px solid #555;
 }
 
 /* Layout
