@@ -1,33 +1,192 @@
+/* Reset
+ * ------------------------------------------------------------- */
+
+/* 
+Browsers will come with a whole bunch of style settings straight out of the box. This is why if you 
+don't add a stylesheet your HTML will already look "styled" when viewed in a browser. For example all 
+headings will already have font-sizes assigned to them. 
+These out-of-the-box styles can be useful, but not always. Most websites will use a set of reset 
+instructions to remove all these styles before new styles are added. That way you can commence your 
+CSS from a clean slate. There are various different reset styles available online. Google can help you here.
+
+This is a very hard (and very lazy) reset of those browser settings
+*/
+
+* {
+  	margin: 0;
+  	padding: 0;
+}
+
 /* General
  * ------------------------------------------------------------- */
 
-/* Very hard reset of browser settings */
-* {
-  margin: 0;
-  padding: 0;
-}
-
  body {
-   font-family: 'Open Sans', Helvetica, sans-serif;
-   line-height: 1.5;
-   color: #555;
+	/*
+ 	Font families are usually listed as a font stack (a string of font families in a row, separated by a comma). 
+ 	The first font in the line-up will be the prefered font to be used. If for some reason a browser cannot use this
+ 	font, it will go to the next one in the stack and try using that one. 
+ 	The last font in the stack is usually a generic font-style as the ulitmate fall back in case nothing specific 
+ 	is available. 
+ 	*/
+   	font-family: 'Open Sans', Helvetica, sans-serif;
+   	line-height: 1.5;
+   
+   	/* 
+   	Colour can be assigned in several different ways. 
+   	The easiest is using a colour name. Google "CSS color names" and you will discover there are lots and lots of named
+   	colours to choose from. 
+   	If you are after a specifc colour value then those colour names might not cut the mustard. In that case you can 
+   	will need something more accurate. The most common options are:
+   	- hex colours: a six digit number starting with #
+   	- rbg colours: a set of three numbers indicating the amount of red, blue and green
+   	An application like PhotoShop or Sketch can give you those colour values. Or you can find a colour picker
+   	online to choose the colour you want.
+   	*/  
+	color: #555;
  }
 
 /* Headings, text, lists
  * ------------------------------------------------------------- */
 
+h1 {
+  	font-size: 20px;
+  	font-weight: 700;
+  	text-transform: uppercase;
+  	letter-spacing: 2px;
+  	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 32px;
+  	font-weight: 300;
+  	margin-bottom: 20px;
+}
+
+p {
+  	font-size: 18px;
+}
 
 /* Images, video, audio
  * ------------------------------------------------------------- */
 
+img {
+	/*
+	The following settings are commonly used for images in responsive websites.
+	Out-of-the-box the size of a displayed image will whatever the size of the image is. 
+	What these settings do is first setting the width to be automatically calculated, but then putting a 
+	restriction on the width by saying it can't be bigger than 100%. That's 100% of the surrounding
+	element in which the image sits in the HTML.
+	The height is set to auto. Whatever width the image ends up as, the height will be calculated to 
+	display the image without distortion. 
+	*/
+  	width: auto;
+  	max-width: 100%;
+  	height: auto;
+}
 
 /* Navigation
  * ------------------------------------------------------------- */
 
+nav ul li {
+ 	/* 
+ 	Using display: inline-block will align all the list elements in one line */
+   	display: inline-block;
+   	margin-right: 20px;
+}
+
+nav ul li a {
+   	font-size: 14px;
+   	font-weight: 700;
+   	text-decoration: none;
+   	text-transform: uppercase;
+   	letter-spacing: 1px;
+   	border-bottom: 2px solid #555;
+   	color: #555;
+}
+
+nav ul li a:hover {
+  border-color: peru; /* peru is a burned orange colour */
+  color: peru;
+}
 
 /* Layout
-  * ------------------------------------------------------------- */
+ * ------------------------------------------------------------- */
 
+.wrapper {
+	/*
+	Adding a width as a percentage makes the element fluid. 
+	In this case the .wrapper will be 90% of the viewport width on which it is displayed. But there is also
+	a restriction that it can't be bigger than 1200px. So if the viewport is so wide that 90% would be more
+	than 1200px, it won't budge and stick to being 1200px.
+	*/
+  	width: 90%;
+  	max-width: 1200px;
+  	
+  	/* 
+  	Setting margin: 0 auto, will center the element inside the element in which it lives. 
+  	For this to work the element you want to center needs to have a width declared.
+  	
+  	The 0 indicates there is no margin at the top or bottom of the element.
+  	The auto indicates for the browser to calculate what the margins left and right will be.
+  	*/
+  	margin: 0 auto;
+  	
+  	/* 
+  	The padding of .wrapper will be 30px top/bottom and 0px left/right
+  	*/
+  	padding: 30px 0;
+}
+
+/*
+Margins and paddings can take values in several different ways:
+
+- padding: 30px; - Using 1 value: means that the padding top/right/bottom/left will be 30px
+- padding: 30px 0; - Using 2 values: means 30px padding top/bottom, 0 px left/right
+- padding: 30px 40px 50px 60px; - Using 4 values: means top 30px, right 40px, bottom 50px, left 60px (it goes clockwise from top)
+- Or you can set a specific padding by using padding-top/padding-right/padding-bottom/padding-left
+*/
+.page__header .wrapper {
+	border-bottom: 1px solid #ccc;
+}
+
+.page__footer {
+	/* 
+	Clear is a property you use when an element before this one has a float property set (in this 
+	case .images img in the next section has one).
+	When an element is floated it will "float" alongside previous elements in the HTML order. This may
+	cause a line not being full. Any gaps left at the end will be used up by the next element in the HTML order
+	to also begin to float. But you may not want this. Hence the clear property. It means "ignore all floats before,
+	stick to your own line".
+	*/
+	clear: both;
+}
 
 /* Specifics
  * ------------------------------------------------------------- */
+
+.text p {
+ 	display: inline-block;
+ 	
+ 	/* 
+ 	This next style rule is to my inner typographer joining in the fun. 
+ 	There is nothing worse than a line lenght for text that runs a mile. Long line lengths make reading harder. 
+ 	An optimal line-lenght is between 45-75 characters per line.
+ 	*/
+  	max-width: 600px;
+}
+
+.text img {
+  	width: 25%;
+  	float: left;
+  	margin-right: 20px;
+  	
+  	/*
+  	Border radius adds rounded corners to elements. You can use percentages, pixels or other fancy things like ems.
+  	*/
+  	border-radius: 50%;
+}
+
+.images img {
+  	width: 33.333333%;
+  	float: left;
+}
