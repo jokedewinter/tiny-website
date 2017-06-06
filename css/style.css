@@ -7,11 +7,9 @@ don't add a stylesheet your HTML will already look "styled" when viewed in a bro
 headings will already have font-sizes assigned to them. 
 These out-of-the-box styles can be useful, but not always. Most websites will use a set of reset 
 instructions to remove all these styles before new styles are added. That way you can commence your 
-CSS from a clean slate. There are various different reset styles available online. 
+CSS from a clean slate. There are various different reset styles available online. Google can help you here.
 
-A more detailed explanation of resets can be found here: http://cssreset.com/what-is-a-css-reset/
-
-This is a very hard (and very lazy) reset of those browser settings.
+This is a very hard (and very lazy) reset of those browser settings
 */
 
 * {
@@ -36,16 +34,13 @@ This is a very hard (and very lazy) reset of those browser settings.
    	/* 
    	Colour can be assigned in several different ways. 
    	The easiest is using a colour name. Google "CSS color names" and you will discover there are lots and lots of named
-   	colours to choose from. https://www.w3schools.com/colors/colors_names.asp
-   	
+   	colours to choose from. 
    	If you are after a specifc colour value then those colour names might not cut the mustard. In that case you can 
    	will need something more accurate. The most common options are:
    	- hex colours: a six digit number starting with #
    	- rbg colours: a set of three numbers indicating the amount of red, blue and green
    	An application like PhotoShop or Sketch can give you those colour values. Or you can find a colour picker
    	online to choose the colour you want.
-   	
-   	Here is a link all about colour: http://htmlcolorcodes.com/
    	*/  
 	color: #555;
 	color:  #333;
@@ -106,8 +101,7 @@ nav ul li a:hover {
 
 .nav__pages ul li {
  	/* 
- 	Using display: inline-block will align all the list elements in one line 
- 	*/
+ 	Using display: inline-block will align all the list elements in one line */
    	display: inline-block;
    	margin-right: 20px;
 }
