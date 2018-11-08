@@ -208,6 +208,10 @@ Margins and paddings can take values in several different ways:
   	border-radius: 50%;
 }
 
+/*
+Giving the images a width, to align them in a row, only when the viewport is 800px wide 
+*/
+
 @media screen and ( min-width: 800px ) {
 	.images img {
 	  	width: 33.333333%;
