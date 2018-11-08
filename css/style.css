@@ -208,7 +208,10 @@ Margins and paddings can take values in several different ways:
   	border-radius: 50%;
 }
 
-.images img {
-  	width: 33.333333%;
-  	float: left;
+@media screen and ( min-width: 800px ) {
+	.images img {
+	  	width: 33.333333%;
+	  	float: left;
+	}
+	
 }
